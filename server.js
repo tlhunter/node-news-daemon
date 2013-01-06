@@ -50,7 +50,7 @@ var activatedTriggers = [];
  * Makes the scanning syntax a little prettier
  */
 var scanFeed = function(url, parser, callback) {
-    parser.parseUrl(url).on('article', callback);
+    parser.parseUrl(url).on('article', callback).on('error', console.log);
 };
 
 /**
@@ -72,8 +72,9 @@ var scanTextForTriggers = function(title, body) {
  * What do we do when an article has been scanned
  */
 var articleCallback = function(article) {
+    var text = article.summary || article.description || '';
     var title = article.title;
-    var body = article.summary.replace(/<(?:.|\n)*?>/gm, ''); // strip out HTML
+    var body = text.replace(/<(?:.|\n)*?>/gm, ''); // strip out HTML
 
     if (activatedTriggers.indexOf(article.guid) < 0 && scanTextForTriggers(title, body)) {
         console.log(title.blue, body);
