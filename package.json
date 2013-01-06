@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "colors": {
+      "version": "0.6.0-1"
+    },
+    "feedparser": {
+      "version": "0.10.12",
+      "dependencies": {
+        "sax": {
+          "version": "0.4.3"
+        },
+        "request": {
+          "version": "2.9.203"
+        },
+        "addressparser": {
+          "version": "0.1.3"
+        }
+      }
+    }
+  }
+}
