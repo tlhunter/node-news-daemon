@@ -50,15 +50,6 @@ manner to prevent duplicates from causing multiple triggers.
     Scan 2/8: http://news.yahoo.com/rss/middle-east
     Scan 3/8: http://news.yahoo.com/rss/europe
 
-## TODO
-
-* Handle errors gracefully (e.g. 404's and invalid feeds)
-* Persist Sources, Triggers, and Activated Triggers to disk
-* Allow sources and triggers to be updated on the fly
- * Listen for incoming HTTP requests to update these lists
- * Dynamically update timers
-* Make it an NPM module
-
 # License
 
 MIT
